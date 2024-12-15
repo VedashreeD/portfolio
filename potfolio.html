@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <!-- home page font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <!-- body font styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+        @keyframes shine {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background: url('https://www.transparenttextures.com/patterns/black-felt.png') repeat,
+                linear-gradient(135deg, #ADD8CC, #D1E8E4, #FFFFFF, #E6E6FA);
+            background-size: 200% 200%; 
+    	    background-blend-mode: overlay;
+    	    animation: shine 30s linear infinite;
+        }
+
+
+        .top-right-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+	.top-right-buttons button {
+    	    border: 2px solid #800000;
+	    color: #800000;
+    	    border-radius: 5px;
+	    background-color: white;
+    	    background-origin: border-box;
+            transition: all 0.3s ease;
+	    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+        .top-right-buttons button:hover {
+    	    background-color: #800000;
+    	    color: white;
+    	    border-color: #800000;
+    	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+	
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 0% 1fr 1fr;
+            grid-template-rows: auto;
+            min-height: 100vh;
+            margin-top: 80px;
+        }
+
+        .fixed-column {
+            grid-column: 1 / 2;
+            grid-row: 1 / 5;
+            background: url('todo_left_corner_image.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .section {
+            grid-column: 2 / 4;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* header styles */
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #8b6f4e;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #8b6f4e;
+            padding-bottom: 10px;
+        }
+
+        /* homepage styles */
+        #home-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+	    background-image: url('background_1.jpg');
+	    background-size: cover;
+	    background-position: center;
+        }
+
+        #name-text {
+            background-color: #f7f1e1; /* Soft rice-paper color */
+            padding: 30px 50px;
+            border-radius: 15px;
+            text-align: center;
+            font-family: 'Hachi Maru Pop', sans-serif;
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #2e3d49;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #8b6f4e;
+            width: fit-content;
+            max-width: 500px;
+        }
+
+        #tagline {
+            font-family: 'Kosugi Maru', sans-serif;
+            font-size: 0.30em;
+            color: #800000;
+            margin-top: 8px;
+            font-style: normal; 
+            letter-spacing: 0.2px;
+            opacity: 0.8;
+            line-height: 1.2;
+        }
+
+	/* blinking caret(vertical bar) */
+	.blinking-bar {
+    	    display: inline-block;
+    	    width: 30px;
+    	    height: 5px;
+    	    background-color: black; 
+    	    margin-left: 5px;
+    	    vertical-align: bottom;
+    	    animation: blink 3s infinite step-start;
+}
+
+	/* keyframes for blinking effect */
+	@keyframes blink {
+    	    50% {
+        	opacity: 0;
+    	    }
+    	    100% {
+        	opacity: 1;
+    	    }
+	}
+
+
+        /* common */
+        p {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        h3 {
+            font-family: 'Arial', sans-serif;
+            color: #2E3D49;
+            font-size: 1.3em;
+            background-color: #F1F1F1;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 10px 0;
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            left: 20px;
+            background: #C5C5C5;
+        }
+
+        .timeline li {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline li:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #808080;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 0 3px #FFF;
+            z-index: 1;
+        }
+
+        .timeline li div {
+            background: #FFFFFF;
+            color: #333;
+            padding: 15px;
+            border-radius: 6px;
+            position: relative;
+            border: 1px solid #D1D1D1;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding-left: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        ul li:before {
+            content: "•";
+            color: #3C8DAD;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3C8DAD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2F6D82;
+        }
+
+        .timeline li div:hover {
+            background-color: #F9F9F9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* contactpage styles */
+        .contact-box {
+            background-color: #f7f1e1; /* Soft rice-paper color */
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 300px;
+            margin: 20px auto;
+            border: 2px solid #8b6f4e; /* Dark beige border */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-box a {
+            display: block;
+            font-size: 1.1em;
+            color: #333;
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            background-color: #f1c40f;
+            color: white;
+        }
+
+        .contact-box i {
+            margin-right: 10px;
+        }
+
+/*custom icons */
+.contact-box a.gmail::before {
+    content: "\2709";  /* unicode gmail */
+    margin-right: 10px;
+    color: #ea4335;
+}
+
+.contact-box a.phone::before {
+    content: "\260E";  /* Unicode phone */
+    margin-right: 10px;
+
+}
+
+.contact-box a.linkedin::before {
+    content: "\1F465";  /* Unicode LinkedIn */
+    margin-right: 10px;
+    color: #0077b5;
+}
+
+.contact-box a span {
+    visibility: hidden;
+}
+
+.contact-box a:hover span {
+    visibility: visible;
+}
+    </style>
+</head>
+<body>
+    <div class="top-right-buttons">
+        <button onclick="document.getElementById('home-page').scrollIntoView()">HOME</button>
+        <button onclick="document.getElementById('experience-page').scrollIntoView()">EXPERIENCE</button>
+        <button onclick="document.getElementById('projects-page').scrollIntoView()">PROJECTS</button>
+        <button onclick="document.getElementById('contact-page').scrollIntoView()">CONTACT</button>
+    </div>
+    <div class="grid-container">
+        <div class="fixed-column"></div>
+
+        <!-- Home page content -->
+        <section id="home-page" class="section container">
+            <div id="name-text">
+                <p>VEDA<br>DASARA<span class="blinking-bar"></span></p>
+                <p id="tagline">DEVELOPER | CREATOR | TECH EXPLORER</p>
+            </div>
+        </section>
+        
+        <!-- Experience page content -->
+        <section id="experience-page" class="section paragraph-row">
+            <div class="header-title">Experience</div>
+
+            <ul class="timeline">
+                <li>
+                    <div>
+                        <h3><strong>Developer | PipeIQ</strong></h3>
+                        <p><em>United States | Present</em></p>
+                        <p>At PipeIQ, I specialize in developing intelligent AI agents aimed at automating lead generation, marketing campaigns, and communication processes. My work focuses on creating high-efficiency solutions that streamline outreach, schedule campaigns, and tailor messaging for dynamic user engagement. I work with a variety of technologies to ensure that the automation process is smooth and impactful for businesses and clients.</p>
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Developed a CSV upload feature to extract and organize lead information, enabling seamless email generation with personalized notes for targeted outreach.</li>
+                            <li>Integrated Person Data Labs to build personalized emails and messages, leveraging AI-driven playbooks to optimize the lead outreach process and improve engagement.</li>
+                            <li>Utilized PostgreSQL to design, manage, and update databases efficiently, ensuring optimal performance for quick data retrieval and smooth operation of the system.</li>
+                            <li>Worked closely with the marketing and sales teams to create automated workflows that reduce manual intervention and maximize the speed and efficiency of outreach campaigns.</li>
+                        </ul>
+                        <p><strong>Languages/Tools Used:</strong> Python, AWS, PostgreSQL, Person Data Labs</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <h3><strong>Software Developer | Opengenus Foundation</strong></h3>
+                        <p><em>United States | Present</em></p>
+                        <p>The Opengenus Foundation is a platform aimed at creating a bridge between learning and implementation of technology. It focuses on curating content and implementing ideas to solve real-world problems through open-source contributions.</p>
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Curated compelling technical articles on C++ and deep learning topics, engaging an audience of over 750,000 monthly users, while driving collaborative initiatives within the OpenGenus GitHub community.</li>
+                            <li>Designed and implemented advanced deep learning models, including Convolutional Neural Networks (CNNs) using PyTorch, and actively contributed to open-source projects that explore dynamic tensor shapes and cutting-edge neural network architectures.</li>
+                        </ul>
+                        <p><strong>Languages/Tools Used:</strong> C++, Python, PyTorch, GitHub</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div>
+                        <h3><strong>Software Engineer | L&T Technology Services</strong></h3>
+                        <p><em>India | June 2019 - Nov 2022</em></p>
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Collaborated with L&T clients to design and enhance 5G architecture, implementing 10 critical features in C and C++ that significantly improved system performance and reliability.</li>
+                            <li>Analyzed code flows and swiftly resolved software issues, ensuring high responsiveness and adherence to clean code principles, while eliminating memory leaks and semantic errors in 5G protocols.</li>
+                            <li>Integrated multiple architectures through effective branch merging and conflict resolution, and automated system bring-up and testing processes using Jenkins, enhancing overall productivity.</li>
+                            <li>Employed Python for data analysis to validate throughput and consistency, conducting dynamic (Valgrind) and static (Klocwork) code analysis to identify and rectify defects, driving operational efficiency in NXP board functionality.</li>
+                        </ul>
+                        <p><strong>Languages/Tools Used:</strong> C/C++, Python, Bitbucket, Git, Jira, Jenkins, Ubuntu, VNC Viewer, WeCode, Cloudpipe</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+   
+<!-- Projects Page Content -->
+<section id="projects-page" class="section container">
+    <div class="header-title">Projects</div>
+    <ul class="timeline">
+        <li class="timeline-item">
+            <div class="timeline-content">
+                <h3><strong>Langur</strong></h3>
+                <p><em>Language Translation Model</em></p>
+                <ul>
+                    <li>Developed a web-based language translation application, using Flask for backend along with OCR integration and machine translation.</li>
+                    <li>Checkout the full code here : <a href="https://github.com/VedashreeD/Langur" target="_blank" rel="noopener noreferrer">Langur</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="timeline-item">
+            <div class="timeline-content">
+                <h3><strong>Games</strong></h3>
+                <p><em>Games for all!</em></p>
+                <ul>
+                    <li>Offline games that can be personalized for each user's preference. QT Design along with C++ used to develop simple games everyone will enjoy.</li>
+                    <li>Choose any game and make it your own : <a href="https://github.com/VedashreeD/GAMES" target="_blank" rel="noopener noreferrer">Games</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</section>
+
+        <!-- Contact page content -->
+        <section id="contact-page" class="section container">
+            <div class="header-title">Contact</div>
+            <div class="contact-box">
+                <a href="javascript:void(0)" class="gmail" onclick="changeContactInfo('email')">Email</a>
+                <a href="javascript:void(0)" class="phone" onclick="changeContactInfo('phone')">Phone</a>
+                <a href="javascript:void(0)" class="linkedin" onclick="changeContactInfo('linkedin')">LinkedIn</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        //update contact information based on the selection
+        function changeContactInfo(contactType) {
+            var email = document.querySelector('.gmail');
+            var phone = document.querySelector('.phone');
+            var linkedin = document.querySelector('.linkedin');
+            
+            //reset all to hidden
+            email.classList.add('hidden');
+            phone.classList.add('hidden');
+            linkedin.classList.add('hidden');
+
+            //show only clicked contact detail
+            if (contactType === 'email') {
+                email.innerHTML = 'dasaraveda@gmail.com';
+                email.classList.remove('hidden');
+	  	phone.innerHTML = 'Phone';
+		linkedin.innerHTML = 'LinkedIn';
+            } else if (contactType === 'phone') {
+                phone.innerHTML = '+1(614)568-3032';
+		email.innerHTML = 'Email';
+		linkedin.innerHTML = 'LinkedIn';
+                phone.classList.remove('hidden');
+            } else if (contactType === 'linkedin') {
+                linkedin.innerHTML = '<a href="https://www.linkedin.com/in/veda-dasara-97a137121/" target="_blank" rel="noopener noreferrer">veda-dasara-97a137121</a>';
+		email.innerHTML = 'Email';
+		phone.innerHTML = 'Phone';
+                linkedin.classList.remove('hidden');
+            }
+        }
+
+        //close all contact info when clicked outside
+        document.addEventListener('click', function(event) {
+            var contactBox = document.querySelector('.contact-box');
+            if (!contactBox.contains(event.target)) {
+                var email = document.querySelector('.gmail');
+                var phone = document.querySelector('.phone');
+                var linkedin = document.querySelector('.linkedin');
+
+                //reset to initial state
+                email.innerHTML = 'Email';
+                phone.innerHTML = 'Phone';
+                linkedin.innerHTML = 'LinkedIn';
+
+                //hide all details
+                email.classList.add('hidden');
+                phone.classList.add('hidden');
+                linkedin.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
+
