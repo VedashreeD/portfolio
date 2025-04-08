@@ -79,7 +79,7 @@ const Home = () => {
                             className={`background-video ${isVideoExpanded ? 'expanded-video' : ''}`}
                             onClick={handleVideoClick}
                         >
-                            <source src="public/images/about.mp4" type="video/mp4" />
+                            <source src="images/about.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
