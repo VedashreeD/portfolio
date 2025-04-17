@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Typed from 'typed.js';
 import { FaLinkedin, FaEnvelope, FaPhoneAlt, FaYoutube, FaGithub } from 'react-icons/fa'; // Import icons
 import '../styles/styles.css';
+import homevideo from '../images/about.MP4'; // Import video file
 
 const Home = () => {
     const typedElement = useRef(null);
@@ -79,7 +80,7 @@ const Home = () => {
                             className={`background-video ${isVideoExpanded ? 'expanded-video' : ''}`}
                             onClick={handleVideoClick}
                         >
-                            <source src="images/about.mp4" type="video/mp4" />
+                            <source src={homevideo} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     </div>

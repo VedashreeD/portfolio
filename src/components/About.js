@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaCode, FaPython, FaReact, FaAws, FaJsSquare, FaGithub, FaTools, FaNetworkWired, FaDatabase } from 'react-icons/fa';
 import { SiCplusplus, SiCplusplusbuilder } from 'react-icons/si';
+import aboutImage from '../images/home-page-bg.jpg';
 
 import '../styles/styles.css';
 
@@ -29,7 +30,7 @@ const About = () => {
                 {/* Right Section: About Photo */}
                 <div className="about-photo">
                     <img
-                        src="images/home-page-bg.jpg"
+                        src={aboutImage}
                         alt="About Me"
                         className="about-photo-img"
                     />
