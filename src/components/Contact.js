@@ -1,63 +1,66 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { FaEnvelope } from 'react-icons/fa';
 import '../styles/styles.css';
 
 const Contact = () => {
-    const [status, setStatus] = useState('');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
     });
+    const [status, setStatus] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         
-        // Update form data first
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
 
-        // Update status message based on current message length
-        if (name === 'message') {
-            if (value.length >= 1000) {
-                setStatus(
-                    <span> 
-                        <a 
-                            href="mailto:dasaraveda@gmail.com"
-                            className="email-link-text"
-                        >
-                            Send me an email instead
-                        </a>
-                    </span>
-                );
-            } else {
-                setStatus(''); // Clear the status message if under limit
-            }
+        // Show email link if message is too long
+        if (name === 'message' && value.length >= 1000) {
+            setStatus(
+                <span>
+                    <a 
+                        href="mailto:dasaraveda@gmail.com"
+                        className="email-link-text"
+                    >
+                        <FaEnvelope /> Send me an email instead
+                    </a>
+                </span>
+            );
         }
     };
 
-    const sendEmail = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
         setStatus('Sending...');
 
-        try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            time: new Date().toLocaleString()
+        };
 
-            if (response.ok) {
-                setStatus('Message sent successfully!');
+        emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            templateParams,
+            process.env.REACT_APP_EMAILJS_USER_ID
+        ).then(
+            (response) => {
+                console.log('Success:', response);
+                setStatus('Thanks for reaching out! I will get back to you soon.');
                 setFormData({ name: '', email: '', message: '' });
-            } else {
-                setStatus('Failed to send message. Please try again.');
+            },
+            (error) => {
+                console.error('Error:', error);
+                setStatus('');
             }
-        } catch (error) {
-            console.error('Error:', error);
-            setStatus('Failed to send message. Please try again.');
-        }
+        );
     };
 
     return (
