@@ -6,8 +6,8 @@ const Projects = () => {
     {
       title: 'Data-Integration-Challenge',
       description: 'Classification-model integration with 3-rd party API',
-      techStack: ['Python', 'FastAPI', 'Classification models'],
-      summary: 'The classification model curates trends based on current local weather. Using TF-IDF and Naive Bayes classification, this app categorizes food items into cold, hot, or snack and suggests products or restocks based on temperature.',
+      techStack: ['Python', 'FastAPI', 'Classification Models'],
+      summary: 'The classification model curates trends based on current local weather using TF-IDF and Naive Bayes classification.',
       link: 'https://github.com/VedashreeD/data-integration-challenge',
     },
     {
@@ -37,8 +37,15 @@ const Projects = () => {
       techStack: ['C++', 'Algorithms'],
       summary: 'A collection of data structures and algorithms implemented in C++, showcasing various techniques and optimizations.',
       link: 'https://github.com/VedashreeD/Data-structures-and-algorithms'
+    },
+    {
+      title: 'Drawn2Code',
+      description:'A web app to convert hand-drawn sketches into code',
+      techStack: ['Python', 'Ollama', 'Javascript'],
+      summary: 'Convert hand-drawn sketches into code using multi-modal ollama models.',
+      link: 'https://github.com/VedashreeD/Drawn2Code'
+    
     }
-    // Add more projects here as needed
   ];
 
   return (

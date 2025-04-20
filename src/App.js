@@ -6,6 +6,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import TopRightButtons from './components/TopRightButtons';
+import DarkModeToggle from './components/DarkModeToggle';
 
 // Create axios instance with base URL
 const api = axios.create({
@@ -59,18 +60,12 @@ function App() {
     }, []);  // Empty dependency array ensures it runs only once when the component mounts
 
     const toggleDarkMode = () => {
-        setDarkMode((prevMode) => !prevMode);
+        setDarkMode(prev => !prev);
     };
 
     return (
         <div className="App">
-            <div className="dark-mode-toggle" onClick={toggleDarkMode}>
-                {darkMode ? (
-                    <div className="moon-icon"></div>
-                ) : (
-                    <div className="sun-icon"></div>
-                )}
-            </div>
+            <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             <TopRightButtons currentSection={currentSection} />
             <div className="sections-container">
                 <section id="home-page" className="section container">

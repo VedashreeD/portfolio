@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Grand+October+Four&display=swap'); /* Import Studio Ghibli-inspired font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap'); /* Import Playfair Display font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400;700&display=swap'); /* Import Playfair Display font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300&display=swap'); /* Import Poppins Light font */
 
 /* Base styles */
@@ -726,11 +726,10 @@ body.dark-mode .contact-box p {
     left: 10px;
     z-index: 20;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
@@ -866,13 +865,13 @@ body.dark-mode .dark-mode-toggle span[aria-label="Moon"] {
 }
 
 .tech-tag.PyTorch {
-    background-color: #EE4C2A; /* Red for PyTorch */
+    background-color: #EE4C2C; /* PyTorch's official red */
     color: #ffffff; /* White text */
 }
 
-.tech-tag.JavaScript {
-    background-color: #F7DF1E; /* Yellow for JavaScript */
-    color: #000000; /* Black text */
+.tech-tag.Javascript {
+    background-color: #F7DF1E; /* JavaScript's official yellow */
+    color: #ffffff; /* Black text for better contrast */
 }
 
 .tech-tag.OCR {
@@ -893,6 +892,36 @@ body.dark-mode .dark-mode-toggle span[aria-label="Moon"] {
 .tech-tag.OfflineGames {
     background-color: #8d786a; /* Brown for Offline Games */
     color: #ffffff; /* White text */
+}
+
+.tech-tag.FastAPI {
+    background-color: #009688; /* FastAPI's teal color */
+    color: #ffffff;
+}
+
+.tech-tag.ClassificationModels {
+    background-color: #06472e; /* Different purple for models */
+    color: #ffffff;
+}
+
+.tech-tag.DeepLearning {
+    background-color: #4A148C; /* Deep purple */
+    color: #ffffff;
+}
+
+.tech-tag.Ollama {
+    background-color: #1B1F23; /* Dark gray/black for Ollama */
+    color: #ffffff;
+}
+
+.tech-tag.Algorithms {
+    background-color: #E91E63; /* Pink for Algorithms */
+    color: #ffffff;
+}
+
+.tech-tag.DeepLearning {
+    background-color: #2d223a; /* Deep purple for Deep Learning */
+    color: #ffffff;
 }
 
 .home-layout {
@@ -1244,59 +1273,71 @@ body.dark-mode .about-section {
 
 /* Style for the projects grid */
 .projects-grid {
-    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 0.2fr)); /* Responsive grid */
-    gap: 10px;
-    align-items: flex-start;
-    padding: 20px;
-    margin-bottom: 10px;
-    overflow: hidden;
- }
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns by default */
+    gap: 1rem; /* Consistent 1rem gap between cards */
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
 /* Individual project card styles */
 .project-card {
-    background-color: #ffffff; /* Fully transparent background */
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 1rem;
     border-radius: 8px;
-    border: 1px solid #e1e4e8; /* Slight border to make it visible */
+    border: 1px solid #e1e4e8;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    flex: 0 0 240px;
-    max-width: 300px;
-    min-width: 300px;
-    height: auto;
+    transition: transform 0.3s ease;
+    min-height: fit-content; /* Changed from fixed height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Project Card Content */
+.project-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    white-space: nowrap;
     overflow: hidden;
-    z-index: 2; /* Keep card content on top of the video */
-    background: #ffffff; /* Inherit background from the section below */
-    color: #333; /* Dark text color */
-}
-  
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2);
-    border-color: #374c63;
+    text-overflow: ellipsis;
 }
 
-.project-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #0366d6;
-    text-decoration: none;
-    margin-bottom: 10px;
+.project-card p {
+    margin: 0 0 0.5rem 0; /* Reduced bottom margin */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
 }
 
-.project-title:hover {
-    color: #0288d1;
-    text-decoration: underline;
+/* Tech Stack Container */
+.tech-stack {
+    margin-top: auto; /* Push to bottom of card */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
 }
-  
-.project-description {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 15px;
-    line-height: 1.4;
+
+/* Responsive breakpoints for projects grid */
+@media screen and (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .project-card {
+        min-height: fit-content;
+    }
 }
 
 /* Optional: You can add transparency to the header/title to let the video show through */
@@ -1305,66 +1346,6 @@ body.dark-mode .about-section {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
-}
-
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap; /* Allow tags to wrap to the next line */
-    gap: 8px; /* Add spacing between tags */
-    justify-content: flex-start; /* Align tags to the left */
-}
-
-.tech-tag {
-    background-color: #e0e0e0; /* Subtle gray background */
-    color: #8af1f1; /* Darker text color */
-    border-radius: 5px; /* Rounded corners */
-    padding: 4px 8px; /* Adjust padding for smaller tags */
-    font-size: 0.8rem; /* Slightly smaller font size */
-    font-weight: bold; /* Bold text */
-    display: inline-block; /* Ensure tags are inline */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
-}
-
-.tech-tag:hover {
-    background-color: #007bff; /* Blue background on hover */
-    color: #ffffff; /* White text on hover */
-}
-
-.tech-tag.Flask {
-    background-color: #343B48; /* Dark Blue for Flask */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.Python {
-    background-color: #306998; /* Blue for Python */
-    color: #ffffff; /* White text */
-}
-
-
-
-.tech-tag.JavaScript {
-    background-color: #F7DF1E; /* Yellow for JavaScript */
-    color: #000000; /* Black text */
-}
-
-.tech-tag.OCR {
-    background-color: #FF5733; /* Orange for OCR */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.C\+\+ {
-    background-color: #0044cc; /* Blue for C++ */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.QtDesign {
-    background-color: #33b933; /* Light green for Qt Design */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.OfflineGames {
-    background-color: #8d786a; /* Brown for Offline Games */
-    color: #ffffff; /* White text */
 }
 
 .home-layout {
@@ -1497,60 +1478,215 @@ body.dark-mode #home-page .button-container button {
     color: #0AB0DA; /* Highlight color for icon and text */
 }
 
-.tech-stack {
+
+
+/* Project title link styles */
+.project-title {
+    color: #0366d6; /* GitHub's link blue color */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.project-title:hover {
+    color: #0969da; /* GitHub's link hover blue color */
+    text-decoration: underline;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .project-title {
+    color: #58a6ff; /* GitHub's dark mode link blue */
+}
+
+body.dark-mode .project-title:hover {
+    color: #79c0ff; /* GitHub's dark mode link hover blue */
+}
+
+/* Global responsive styles */
+@media screen and (max-width: 1024px) {
+    .sections-container {
+        gap: 40px;
+        padding: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .about-divide {
+        margin-left: 5%;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Layout adjustments */
+    .home-layout {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .name-section {
+        width: 90%;
+        padding: 10px;
+    }
+
+    /* About section */
+    .about-divide {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .about-text, .about-photo {
+        flex: 100%;
+        width: 100%;
+    }
+
+    .about-photo-img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Skills section */
+    .skills-icons {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 20px;
+    }
+
+    /* Projects section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .project-card {
+        min-width: unset;
+        max-width: 100%;
+    }
+
+    /* Navigation */
+    .top-right-buttons {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        right: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 10px;
+        justify-content: space-around;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .top-right-buttons {
+        background: rgba(0, 0, 0, 0.95);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Typography */
+    .header-title {
+        font-size: 1.8em;
+    }
+
+    .text-container h1 {
+        font-size: 2rem;
+    }
+
+    #dynamic-tagline {
+        font-size: 1.2em;
+    }
+
+    /* Contact form */
+    .contact-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* Project cards */
+    .project-card {
+        padding: 15px;
+    }
+
+    /* Skills icons */
+    .skill-icon {
+        font-size: 2rem;
+    }
+}
+
+/* Landscape mode for mobile devices */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .home-layout {
+        flex-direction: row;
+        height: auto;
+        padding: 20px;
+    }
+
+    .name-section {
+        width: 60%;
+    }
+
+    .top-right-buttons {
+        flex-direction: row;
+        padding: 5px;
+    }
+
+    .section {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    body.dark-mode .project-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+
+    body.dark-mode .contact-box {
+        background-color: #1a1a1a;
+    }
+}
+
+/* High-resolution screens */
+@media screen and (min-width: 1440px) {
+    .sections-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    z-index: 400;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
     display: flex;
-    flex-wrap: wrap; /* Allow tags to wrap to the next line */
-    gap: 8px; /* Add spacing between tags */
-    justify-content: flex-start; /* Align tags to the left */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-.tech-tag {
-    background-color: #f8dadc; /* Subtle gray background */
-    color: #333; /* Darker text color */
-    border-radius: 5px; /* Rounded corners */
-    padding: 4px 8px; /* Adjust padding for smaller tags */
-    font-size: 0.8rem; /* Slightly smaller font size */
-    font-weight: bold; /* Bold text */
-    display: inline-block; /* Ensure tags are inline */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
-}
-
-.tech-tag:hover {
-    background-color: #007bff; /* Blue background on hover */
-    color: #ffffff; /* White text on hover */
-}
-
-.tech-tag.Flask {
-    background-color: #343B48; /* Dark Blue for Flask */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.Python {
-    background-color: #306998; /* Blue for Python */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.JavaScript {
-    background-color: #F7DF1E; /* Yellow for JavaScript */
-    color: #000000; /* Black text */
-}
-
-.tech-tag.OCR {
-    background-color: #FF5733; /* Orange for OCR */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.C\+\+ {
-    background-color: #0044cc; /* Blue for C++ */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.QtDesign {
-    background-color: #33b933; /* Light green for Qt Design */
-    color: #ffffff; /* White text */
-}
-
-.tech-tag.OfflineGames {
-    background-color: #8d786a; /* Brown for Offline Games */
-    color: #ffffff; /* White text */
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
 }
