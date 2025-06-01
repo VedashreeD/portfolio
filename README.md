@@ -1,5 +1,4 @@
 # Portfolio
-
 This project is a personal portfolio built using React. It showcases the user's skills, experience, projects, and contact information.
 
 ## Project Structure
