@@ -1,5 +1,4 @@
 # Portfolio
-
 This project is a personal portfolio built using React. It showcases the user's skills, experience, projects, and contact information.
 
 ## Project Structure
@@ -27,19 +26,6 @@ This project is a personal portfolio built using React. It showcases the user's 
 - **Contact Form**: Users can send messages directly via the contact form integrated with `emailjs`.
 - **Responsive Design**: Fully responsive layout for all devices.
 
-## Getting Started
-
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Run `npm install` to install dependencies.
-4. Create a `.env` file in the root directory and add the following:
-   ```
-   SERVICE_ID=your_emailjs_service_id
-   TEMPLATE_ID=your_emailjs_template_id
-   ID=your_emailjs_user_id
-   ```
-5. Run `npm start` to start the development server.
-
 ## Technologies Used
 
 - React
@@ -47,7 +33,8 @@ This project is a personal portfolio built using React. It showcases the user's 
 - JavaScript
 - EmailJS
 - React Icons
-- Typed.js
+- Tailwind CSS
+- - Vite
 
 ## Author
 
