@@ -50,7 +50,7 @@ function App() {
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 to-indigo-900">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-t-blue-500 border-b-purple-500 border-l-transparent border-r-transparent rounded-full animate-spin mx-auto"></div>
-          <h2 className="mt-4 text-xl font-semibold text-white">Loading Portfolio...</h2>
+          <h2 className="mt-4 text-xl font-semibold text-white">Loading...</h2>
         </div>
       </div>
     );

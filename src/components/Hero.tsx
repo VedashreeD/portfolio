@@ -34,7 +34,7 @@ const Hero = () => {
                 Get in Touch
               </a>
               <a 
-                href="https://drive.google.com/file/d/1TkaSDKiKgxQWNdk8qs-MvtQcJJSenzOa/view?usp=drive_link" 
+                href="https://drive.google.com/file/d/1S1rHz7nCqIm0DH3fTpOKWzDwwc_qYuk_/view?usp=drive_link" 
                 target="_blank"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-full shadow-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transform transition duration-300 hover:scale-105"
               >
@@ -60,12 +60,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#about" className="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow duration-300">
-            <ArrowDown className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-          </a>
         </div>
       </div>
     </section>

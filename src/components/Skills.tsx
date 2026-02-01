@@ -49,9 +49,9 @@ const Skills = () => {
       name: "Cloud & Data Engineering",
       skills: [
         { name: "AWS (EC2, ECS, S3, Lambda)", level: 80 },
-        { name: "Databricks", level: 80 },
+        { name: "Azure(ADO, Foundry, APIM, App Services)", level: 80 },
         { name: "SQL", level: 85 },
-        { name: "Apache Spark", level: 75 },
+        { name: "Databricks", level: 30 },
         { name: "Data Pipelines", level: 80 }
       ]
     }

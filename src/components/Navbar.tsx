@@ -55,7 +55,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="relative px-3 py-2 text-sm font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 group"
+                  className="relative px-3 py-2 text-sm font-medium text-gray-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 group"
                 >
                   {link.name}
                   <span className="absolute inset-x-0 bottom-0 h-0.5 bg-indigo-600 dark:bg-indigo-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
@@ -105,7 +105,7 @@ const Navbar = () => {
               key={link.name}
               href={link.href}
               onClick={handleNavClick}
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
             >
               {link.name}
             </a>
