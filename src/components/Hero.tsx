@@ -31,7 +31,7 @@ const Hero = () => {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-300/50 via-white/40 to-purple-300/50 rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-500 group-hover:duration-300 animate-pulse-slow"></div>
                 <a 
-                  href="https://drive.google.com/file/d/1S1rHz7nCqIm0DH3fTpOKWzDwwc_qYuk_/view?usp=drive_link" 
+                  href="https://drive.google.com/file/d/1o4ecAeXfYPfe9IgZetpOlXBBCTK_cnbu/view?usp=share_link" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.03] border border-purple-500/20 bg-black shadow-lg shadow-black/50"
