@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <div className="mb-4 inline-block">
               <span className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-300 py-1 px-3 rounded-full text-sm font-medium">
-                AI Full-Stack Developer
+                AI Developer II at Western & Southern Financial Group
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-slate-800 dark:text-white">
@@ -26,21 +26,23 @@ const Hero = () => {
                I design workflows where every dependency is intentional, and every function flows cleanly toward its goal, delivering robust, future-proof solutions that not only meet expectations—but consistently exceed them.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a 
-                href="#contact" 
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transform transition duration-300 hover:scale-105"
-              >
-                Get in Touch
-              </a>
-              <a 
-                href="https://drive.google.com/file/d/1S1rHz7nCqIm0DH3fTpOKWzDwwc_qYuk_/view?usp=drive_link" 
-                target="_blank"
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-full shadow-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 transform transition duration-300 hover:scale-105"
-              >
-                <FileText className="w-5 h-5 mr-2" />
-                View Resume
-              </a>
+            <div className="mt-8 flex justify-center lg:justify-start">
+              {/* Primary CTA: View Resume */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-300/50 via-white/40 to-purple-300/50 rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-500 group-hover:duration-300 animate-pulse-slow"></div>
+                <a 
+                  href="https://drive.google.com/file/d/1S1rHz7nCqIm0DH3fTpOKWzDwwc_qYuk_/view?usp=drive_link" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.03] border border-purple-500/20 bg-black shadow-lg shadow-black/50"
+                >
+                  <span className="absolute inset-0 transition-colors duration-300 group-hover:bg-zinc-950"></span>
+                  <span className="relative flex items-center gap-2 text-white group-hover:text-slate-100 transition-colors drop-shadow-sm">
+                    <FileText className="w-5 h-5 group-hover:-rotate-6 transition-transform" />
+                    <span className="tracking-widest uppercase text-sm">View Resume</span>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
           
