@@ -21,37 +21,30 @@ const Skills = () => {
       name: "AI",
       skills: [
         { name: "Langgraph", level: 90 },
-        { name: "AI Agents", level: 85 },
-        { name: "Natural Language Processing", level: 90 },
-        { name: "RAG", level: 80 },
-        { name: "Long-Term Memory", level: 80 }
+        { name: "Microsoft Agentic Framework", level: 80 },
+        { name: "Fine-tuning", level: 85 },
+        { name: "Evaluation Frameworks", level: 80 },
+        { name: "AI Architecture", level: 90 }
       ]
     },
     {
       name: "Programming Languages",
       skills: [
         { name: "Python", level: 90 },
-        { name: "C++", level: 80 },
-        { name: "SQL", level: 85 },
+        { name: "React", level: 85 },
+        { name: "C/C++", level: 60 },
+        { name: "MongoDB", level: 90 },
+        { name: "PostgreSQL", level: 85 },
         { name: "Bash/Shell Scripting", level: 85 }
-      ]
-    },
-    {
-      name: "Web Development",
-      skills: [
-        { name: "React", level: 90 },
-        { name: "Node.js", level: 85 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "Next.js", level: 80 },
       ]
     },
     {
       name: "Cloud & Data Engineering",
       skills: [
         { name: "AWS (EC2, ECS, S3, Lambda)", level: 80 },
-        { name: "Azure(ADO, Foundry, APIM, App Services)", level: 80 },
+        { name: "Azure(Foundry, APIM, App Services)", level: 80 },
         { name: "SQL", level: 85 },
-        { name: "Databricks", level: 30 },
+        { name: "Databricks", level: 50 },
         { name: "Data Pipelines", level: 80 }
       ]
     }

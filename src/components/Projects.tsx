@@ -48,7 +48,7 @@ const Projects = () => {
                 </div>
                 <div className="text-center">
                   <h3 className="font-bold text-gray-900 dark:text-white text-lg group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Hackathons</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Explore my portfolio</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Explore my projects</p>
                 </div>
               </div>
             </a>
@@ -69,7 +69,7 @@ const Projects = () => {
                 </div>
                 <div className="text-center">
                   <h3 className="font-bold text-gray-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Repositories</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">View my Open Source</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">View my Open Source code</p>
                 </div>
               </div>
             </a>

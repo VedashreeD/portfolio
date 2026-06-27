@@ -26,13 +26,13 @@ const About = () => {
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
             <div className="text-center">
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed font-['Playfair_Display']">
-                My journey in technology began as a Computer Science student, where an innate curiosity led me to immerse myself in a multitude of emerging technologies. This hands-on exploration allowed me to discover my niche and sparked a passion for continuous learning.
+                A drive to solve real problems, backed by a deep foundation in computer science and an appetite for understanding technology from the inside out — fuels my passion for continuous learning and technical excellence.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed font-['Playfair_Display']">
-                Starting out at Larson & Toubro Technology Services, I contributed to the creation of next-generation systems poised to revolutionize telecommunications. This experience deepened my understanding of intricate systems and solidified my commitment to using technology to drive innovation.
+                With 6+ years of experience across multiple technologies and languages, that foundation in computer science has always been the thread that ties it all together.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-['Playfair_Display']">
-                Currently, I work at a startup, delving into Artificial Intelligence, agents, and Model Context Protocols (MCP), continuously expanding my expertise to stay ahead of tech advancements. This ongoing journey of exploration and mastery drives my dedication to creating secure, efficient, and transformative technologies that meet the evolving demands of the tech industry.
+                Today, I'm a Senior AI Developer at Western & Southern Financial Group — designing AI architectures and working with intelligent agents to build solutions that are thoughtful, efficient, and built to last.
               </p>
             </div>
           </div>
