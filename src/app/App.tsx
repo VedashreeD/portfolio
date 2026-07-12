@@ -21,9 +21,6 @@ function NavBar({ active, onNav }: { active: string; onNav: (s: string) => void 
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-[200] transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""}`}>
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <span className="font-mono text-sm tracking-widest text-accent uppercase cursor-pointer hover:opacity-70 transition-opacity"
-          style={{ fontFamily: "'Geist Mono', monospace" }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>HOME</span>
         <div className="flex items-center gap-8">
           {NAV_ITEMS.map(item => (
             <button key={item} onClick={() => onNav(item)}
